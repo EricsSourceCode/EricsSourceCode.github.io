@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Elliptic Curve Cryptography and Bitcoin</title>
+</head>
+<body>
+<h1>Elliptic Curve Cryptography and Bitcoin</h1>
+<p>Copyright &copy; Eric Chauvin 2021.
+<br>Updated 8/21/2021</p>
+
+<p>I am studying parts of Elliptic Curve
+ cryptography and parts of the Elliptic Curve
+ Digital Signature Algorithm (ECDSA).  So I
+ am focusing on that, but it's a big part of
+ what makes Bitcoin work, and so I will go in
+ to some things about Bitcoin here too.
+</p>
+
+<p><a href="https://finance.yahoo.com/quote/BTC-USD/">
+The price of Bitcoin in US Dollars.</a>
+</p>
+
+<p>There is a poor country in Africa where
+ they had a medical clinic, and people who
+ were illiterate learned that a person holding
+ a pen, and taking notes, was a person of
+ higher social status.  So having and holding
+ a pen became valuable to some people even
+ though they were illiterate.  That brings up
+ the question of what has value.
+</p>
+
+<p>A commodity like wheat has value.  A lot of
+ people want it.  Its value changes pretty
+ much every minute.  You might bet on the
+ future price of wheat.  A derivative, like
+ stock options, has an underlying value.
+ An option's value is derived from the
+ underlying thing that has value.  You can
+ get an option on the price of wheat, and
+ wheat is the thing that has the underlying
+ value.
+</p>
+
+<p>Bitcoin is all about Cryptography and the
+ technical details of programming for it, but
+ some of the ideas about Bitcoin are based on
+ Game Theory and the incentives that people
+ have.  So like any other form of Economics it
+ is based on people's behavior.
+ Something is valuable because people believe
+ it has value.  People will pay for something
+ because it has value to them.  For example
+ Beauty has value to many women and so the
+ company L'Oreal is valued at about
+ 163 billion dollars.  People value food, so
+ the Kroger grocery store company has a market
+ cap of something like 27 billion dollars.
+</p>
+
+<p>Bitcoin has value because people think it
+ has value.
+</p>
+
+<p>The market cap for Bitcoin would be the price
+ of one Bitcoin times the number of Bitcoins,
+ and it was something like a Trillion dollars
+ last time I checked.  But there are also
+ derivatives based on Bitcoin, so that people
+ can bet an unlimited amount of dollars on what
+ Bitcoin is doing.  If the main encryption
+ algorithm that Bitcoin is based on could be
+ broken then Bitcoin would be worthless.
+</p>
+
+<p>If you think of the private key as a password,
+ then your password to your online bank account
+ is what has value. If a hacker gets the password
+ to your bank account, then they can have your
+ bank account.  But unlike with a real bank
+ account, if you lose your Bitcoin private key,
+ your bank account disappears.  It just vanishes
+ in to thin air. And you can't go talk to a
+ banker at the bank and get your money back.
+  It's just gone.  What had value is just gone.
+</p>
+
+<p>There was a contest called the RSA Factoring
+ Challenge, which was a contest with prizes up
+ to 200,000 dollars, to get people to try and
+ break the RSA Crypto System.
+ <a href="https://github.com/EricInArizona/Cryptography">
+ (See the RSA.cpp source code.)</a>
+ But that contest actually goes back to an
+ article in Scientific American in 1977, by
+ Martin Gardner, called "A new kind of cipher
+ that would take millions of years to break".
+ And it involved a 100 dollar prize.
+</p>
+
+<p>Now days there is a bigger contest, with
+ bigger prizes.  Like the Trillion dollar prize
+ that some well funded hacker could win by
+ stealing Bitcoins.  So Edgar Allan Poe would
+ have said about Bitcoin: "Yet it may be roundly
+ asserted that human ingenuity cannot concoct
+ a cipher which human ingenuity cannot resolve."
+</p>
+
+<p>Especially with a Trillion dollar prize to
+ be won.
+</p>
+
+<p>The question is: Can human ingenuity come
+ up with a way to get the private key?  Could
+ a hacker find the private key?  That is what
+ I am trying to do.  But very publicly.  Not in
+ secret, like a thief, but like in the story
+ about the emperor's new clothes.  More like
+ saying that the Emperor is not wearing any
+ clothes.  I am trying to demonstrate that a
+ private key can be found.
+ <a href="https://github.com/EricInArizona/Cryptography">
+ (See the Ellip.cpp source code.)</a>
+</p>
+
+<p>One time I bought a train ticket and on the
+ back of the ticket, in very fine print, it said
+ something like "This is not a contract to give
+ you a ride to anywhere."  Sometimes you'll see
+ a legal contract that says something like
+ "What ever the salesman told you is not in
+ this contract.  The only contract between us
+ is what is written here in this document."
+</p>
+
+<p>In mathematics, the only contract is what
+ is written in the axioms, or the postulates of
+ the system.  In Bitcoin, the contract is written
+ in to the source code.  Bitcoin uses the
+ ECDSA algorithm, described at:
+ <a href="http://www.secg.org/sec2-v2.pdf">
+ Standards for Efficient Cryptography secp256k1.</a>
+</p>
+
+<p>Transactions in Bitcoin use an address, which
+ is a hash of the public key.  To spend some
+ Bitcoin, which means to send it to someone
+ else, you send it from your address to their
+ address.  (See
+ <a href="https://en.bitcoin.it/wiki/Transaction">
+ Bitcoin Transactions</a> and also see
+ <a href="https://en.bitcoin.it/wiki/Script">
+ Bitcoin Script.</a>)
+</p>
+
+<p>The owner of the Bitcoin has to sign a
+ transaction with their private key, using
+ the Elliptic Curve Digital Signature Algorithm
+ (ECDSA).  So I am focusing on that particular
+ algorithm.  If it was possible to find the
+ private key for a public key that corresponds
+ to a transaction, you could spend someone
+ else's money.  Which would mean that the
+ system is not secure, and so the whole system
+ of Bitcoin would have no value.  Kind of like
+ a bank that had a big safe full of gold coins
+ as their only asset.  But they accidently
+ published the combination to the safe,
+ allowing anyone to go in and grab those gold
+ coins.  It would bring the value of the bank
+ itself to zero.
+</p>
+
+<p>The history of the Elliptic Curve algorithm
+ used in Bitcoin goes back at
+ least 2,500 years to Euclid and Pythagoras and
+ their geometric ideas about points on a circle,
+ what are called Pythagorean Triples.  What
+ would now be called rational points on a
+ curve and an algorithm for finding
+ Pythagorean Triples.
+</p>
+
+<p>After Isaac Newton lived, when people like
+ Leonhard Euler were studying the elliptical
+ orbits of planets, they used an elliptic
+ integral for integrating along the arc length
+ of the elliptical orbit.  The elliptic
+ integral is a cubic equation, and what is
+ called Elliptic Curve Cryptography is based
+ on a cubic equation for that elliptic
+ integral, not an equation for an ellipse.
+</p>
+
+<p>I will use phrases like "an infinite slope"
+ and other uses of the word 'infinite' like that,
+ but with software, the only definitions for words
+ are how the words are defined in the code.
+ So if I write in my code that Infinity = 1234567,
+ then it only means that.  It does not mean
+ what the salesman told you.
+</p>
+
+<p>Algebraically, as it is used in this code,
+ Infinity is sort of like zero, because
+ P + Infinity = P.
+ <a href="https://github.com/EricInArizona/Cryptography">
+ (See the description of the Additive Identity in
+ the EPoint.cpp source.)</a>
+</p>
+
+<p>The idea of a point at infinity comes from
+ an idea in Projective Geometry.  You can learn
+ more about that in my
+ <a href="https://ericinarizona.github.io/MathGraphics.htm">
+ Math and Graphics</a> page, where I talk about
+ Projective Space and graphics programming.
+ In graphics programming it is common to use
+ Homogeneous Coordinates, where points in 3D
+ space are represented with 4 numbers.  The
+ details are there, but just for future
+ reference, if a 2D curve was represented with
+ three numbers, then the point At Infinity
+ would have the three numbers 0,1,0 and the
+ normal points on the curve would be
+ represented like x,y,1.  With the
+ point at infinity having a Z coordinate of 0.
+ But in the EPoint.cpp file you can see just
+ two coordinates, rather than having a redundant
+ 1 for every point.
+</p>
+
+<p>In cryptography the points on the cubic
+ curve have integers for their x and y components.
+ The slope of a line between two points
+ on a curve is used in the math, and that slope
+ is a rational number, like with Pythagorean
+ Triples, except that with the modular
+ arithmetic that is used in Cryptography,
+ that slope, and those points, have integer
+ values.  It is a very Algebraic form of Geometry
+ where the slope of a line isn't all that
+ visualizable like in regular geometry.
+</p>
+
+<p>There is the idea of doing arithmetic on the
+ points of a curve.  You can add, subtract,
+ multiply and divide points on a curve.  The
+ file
+ <a href="https://github.com/EricInArizona/Cryptography">
+ EPoint.cpp</a>
+ shows how to do those operations
+ on points on a curve.  The add() function in
+ the EPoint.cpp file defines what it means to
+ add two points on a curve.  There are comments
+ in the source code that explain some of the
+ details of what it means to do arithmetic on
+ points on a curve.
+</p>
+
+<p>The expression Q = nP means to add P n times.
+ It is Scalar Multiplication of the point P.
+ The public key is a point on the curve.
+ The private key is an integer k.  To get the
+ public key, multiply the integer k, the
+ private key, with the generator point G.
+ So pubKey = kG.
+</p>
+
+<p>A private key is a large integer.  The
+ public key is a point on the curve.
+</p>
+
+<p>
+ <a href="https://github.com/EricInArizona/Cryptography">
+ C++ source code.</a>
+</p>
+
+<p><a href="https://ericinarizona.github.io/">
+ Main Page</a>
+<br><br>
+</p>
+
+</body>
+</html>
