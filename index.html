@@ -1,78 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eric's Source Code</title>
-
-
-<!--
-<style>
-body {
-  background-color: black;
-}
-h1 {text-align: center;
-    color: white;}
-h2 {text-align: center;
-    color: white;}
-h4 {text-align: center;
-    color: white;}
-p {text-align: left;
-   color: white;}
-</style>
--->
+<title>Garner's Formula and the RSA Crypto
+ System</title>
 
 <style>
-h1 {text-align: center; }
-h2 {text-align: center; }
-h4 {text-align: center; }
-p {text-align: left; }
+h1 {text-align: center;}
+h5 {text-align: center;}
 </style>
 
-
-</head>
-<body>
 
 <!--
 Instructions:
 https://pages.github.com/
 -->
 
-<br>
-<h1>Eric's Source Code</h1>
-<br>
 
-<h4>Eric Chauvin: chauvine959@gmail.com
-</h4>
+</head>
+<body>
 
-<h4><a href="https://github.com/EricsSourceCode/">
+<h1>Garner's Formula and the RSA Crypto
+ System</h1>
+<h5>Last updated June 10, 2024.<br>
+Copyright &copy; Eric Chauvin 2023 - 2024.<br>
+chauvine959@gmail.com<br>
+<a href="https://github.com/EricsSourceCode/">
 The Source Code on GitHub</a>
-</h4>
 
-<h4><a href="https://EricsSourceCode.github.io/TlsIndex.htm">
-Transport Layer Security</a>
-</h4>
+</h5>
 
-<h4><a href="https://EricsSourceCode.github.io/AIIntro.htm">
-Artificial Intelligence</a>
-</h4>
+<p>In documentation about the RSA Crypto
+ System you will sometimes see a mention of
+ Garner's Formula.  It is used for
+ decrypting with the private keys.  But you
+ pretty much never see an explanation of
+ Garner's formula.  So here is the explanation.
+</p>
 
-<h4><a href="https://EricsSourceCode.github.io/MountainLion.htm">
-My Experiences with Mountain Lions</a>
-</h4>
+<p>In 1959 Harvey Garner wrote about
+ a number system [1] based on the
+ Chinese Remainder Theorem (CRT).  He called
+ it The Residue Number System.  Somewhere
+ around 10
+ years ago I made a number system I called
+ my CRT number system, which is very much
+ like Garner's number system,
+ but I didn't read his paper until
+ July 2023.  Back then I thought I was
+ inventing something new.  But my CRT code
+ is what he called a Residue Number System.
+</p>
+
+<p>In 1959 when Garner wrote his paper
+ you couldn't express your ideas in a
+ good programming language like you can
+ now.  So I am expressing these ideas
+ in C++ source code here.  When ever I
+ refer to a .cpp file I mean the
+ corresponding .h file too, 
+<a href="https://github.com/EricsSourceCode/Crt">
+ like Crt.cpp and Crt.h</a>.
+</p>
+
+<p>The first section of Garner's paper is
+ the introduction, then the next section is
+ about basic 
+ <a href="https://github.com/EricsSourceCode/CppInt">
+ Modular Arithmetic</a>, then in the next
+ several sections he describes pretty much
+ what you see in Crt.cpp.  It's not exactly
+ the same, but pretty much the same idea.
+</p>
+
+<p>The next section, called Conversion
+ From a Residue Code to a Normal Number
+ Representation is where he describes
+ what is now called Garner's Formula.
+ That is different from what is done
+ in Crt3.cpp.
+ The source code files for the CRT
+ number system are in the
+ <a href="https://github.com/EricsSourceCode/Crt">
+ Crt repository</a>.
+ Things for Cryptography are in the
+ <a href="https://github.com/EricsSourceCode/CryptoBase">
+ CryptoBase repository</a>.
+ Check the
+ <a href="https://github.com/EricsSourceCode/CppBase">
+ CppBase repository</a> for things that are basic
+ to almost all C++ programming like buffers for
+ bytes.
+</p>
+
+<p>What is now called Garner's Formula is
+ shown in Garner.cpp in the formula() function.
+ You can see in the Rsa.cpp file how Garner's
+ Formula is used.
+</p>
+
+<p>The GarnerCrt.cpp file has a more complete
+ description of Garner's formula than what
+ you see in the Garner.formula() function
+ in Garner.cpp.  That Garner.formula()
+ function is used for only the two primes,
+ the traditional P and Q like in RFC 2437,
+ in Rsa.cpp.  It shows how the standard
+ Garner.decryptWithQInverse() came to be.
+</p>
+
+<p>In the GarnerCrt.toInteger() function
+ you can see what Garner described for
+ any number of primes.  That function is
+ tested in the Rsa.makeKeys() function in
+ Rsa.cpp.  And it also shows my Crt3 number
+ system being tested with the Crt3.toInteger()
+ function.  That Crt3.toInteger() function
+ is what I came up with before I read
+ Garner's paper.  But what is now called
+ Garner's Formula is what is in
+ GarnerCrt.toInteger().  And also constant
+ values from his paper, like the
+ A<sub>i</sub> and
+ m<sub>i</sub> in are calculated in
+ GarnerCrt.setUpConstants().
+</p>
+
+<br>
+
+<p><a href="https://github.com/EricsSourceCode/">
+Source Code</a>
+</p>
 
 
 <!--
-<h4><a href="https://EricsSourceCode.github.io/InternetHistory.htm">
-The History of the Internet</a>
-</h4>
+<p><a href="https://EricsSourceCode.github.io/">
+Main Page</a>
+<br><br>
+</p>
 -->
 
-<h4><a href="https://EricsSourceCode.github.io/MyTimeLine.htm">
-Eric Chauvin's Computing Time Line</a>
-</h4>
-
-
+<br>
+<p>References:<br>
+[1] Harvey L Garner<br>
+1959 Proceedings of The Western Joint
+ Computer Conference<br>
+H. Garner.  The Residue Number System.<br>
+IRE Transactions on Electronic Computers,
+ EC-8 (6), pp. 140 - 147, June 1959.
+</p>
 
 <br>
-<br>
+
+
 </body>
 </html>
